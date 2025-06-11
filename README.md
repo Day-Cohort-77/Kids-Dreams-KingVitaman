@@ -6,7 +6,7 @@ Time to assess how well you have learned to use the debugging tools in Chrome De
 
 ## Event Listeners to Create
 
-1. When the kid name is clicked, it should display their wish.
+1. When the kid name is clicked, it should display their wiI wsh.
 1. When the celebrity name is clicked, it should display their sport.
 1. The pairings list should should contain the pairing in the following format.
     ```html
@@ -35,10 +35,22 @@ Make sure your Developer Tools are open at all times while working on this proje
 Before you click the "Complete Assessment" button on the Learning Platform, add your answers below each question and make a commit.
 
 1. When a child is clicked on in the browser, which module contains the code that will execute on that event happening? Can you explain the algorithm of that logic?
-   > Your answer here
+    > The listener from kids.js catches the click
+    > event.target tells you what element was clicked
+    > dataset.type identifies the right element
+    > dataset.wish and textContent give the info needed
+    > Show the alert with the child's wish > 
 2. In the **Pairings** module, why must the `findCelebrityMatch()` function be invoked inside the `for..of` loop that iterates the kids array?
-   > Your answer here
+    > Each kid has a unique celebrityId that links them to one celebrity
+    > The loop itterates one kid at a time, so we need to find that kid's celebrity partner for each iteration
+    > Without calling it in the loop, we couldn't create the personalized pairing message for each child
 3. In the **CelebrityList** module, can you describe how the name of the sport that the celebrity plays can be displayed in the window alert text?
-   > Your answer here
+    > generate the celebrity list, they get a data-sport attribute
+    > The event listener checks if the clicked element has the correct dataset.type
+    > When a celebrity is clicked, event.target.dataset.sport gets the sport value from that specific element's attributes
+    > alert displays the sport using the retrieved value
 4. Can you describe, in detail, the algorithm that is in the `main` module?
-   > Your answer here
+    > Import functions from (Kids, Celebrities, Pairings)
+    > Identify the container with doucument.querySelector
+    > Build the complete HTML useing the imported functions
+    > Display everything with innerHTML
